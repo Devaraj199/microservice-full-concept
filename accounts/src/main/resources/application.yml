@@ -1,0 +1,71 @@
+spring:
+  application:
+    name: "accounts"
+  profiles:
+    active: "default"
+  config:
+    import: "optional:configserver:http://localhost:8086"
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eazybytes
+    username: postgres
+    password: default
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+#  config:
+#    import:
+#      - "application_qa.yml"
+#      - "application_prod.yml"
+#  profiles:
+#    active:
+#      - "qa"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+    circuitbreakers:
+      enabled: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 100
+        waitDurationInOpenState: 1000
+        failureRateThreshold: 50
+        permittedNumberOfCallsInHalfOpenState: 2
+#build: since getting configuration from class path config server
+#  version: "1.0"
+#
+#accounts:
+#  message: "Welcome to eazybank account related local APIs"
+#  contactDetails:
+#     name: "Devaraj Developer"
+#     email: "Deva@gmail.com"
+#  onCallSupport:
+#    -(91)-9182571620
+#    -(91)-9515045982

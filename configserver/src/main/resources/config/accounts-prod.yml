@@ -1,0 +1,17 @@
+# Since following as cloud config server so disabling spring boot profile style
+#spring:
+#  config:
+#    activate:
+#      on-profile: "prod"
+
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to eazybank account related local product APIs"
+  contactDetails:
+    name: "Raju Product owner"
+    email: "Raju@gmail.com"
+  onCallSupport:
+    -(91)-9182571620
+    -(91)-9515045982

@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: loans
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eazybytes
+    username: postgres
+    password: default
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8083
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

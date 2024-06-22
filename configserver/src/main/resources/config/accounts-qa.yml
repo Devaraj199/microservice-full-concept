@@ -1,0 +1,17 @@
+# Since following as cloud config server so disabling spring boot profile style
+#spring:
+#  config:
+#    activate:
+#      on-profile: "qa"
+
+build:
+  version: "3.0"
+
+accounts:
+  message: "Welcome to eazybank account related local QA APIs"
+  contactDetails:
+    name: "Mahesh QA Lead"
+    email: "mahesh@gmail.com"
+  onCallSupport:
+    -(91)-9182571620
+    -(91)-9515045982

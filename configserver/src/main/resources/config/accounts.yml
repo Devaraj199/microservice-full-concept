@@ -1,0 +1,12 @@
+
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to eazybank account related local APIs"
+  contactDetails:
+     name: "Devaraj Developer"
+     email: "Deva@gmail.com"
+  onCallSupport:
+    -(91)-9182571620
+    -(91)-9515045982
